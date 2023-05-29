@@ -1,16 +1,16 @@
-body{
+body {
     background: blue;
     color: #ffffff;
 }
 
-.tulisan_satu{
+.tulisan_satu {
     color: green;
     font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
     text-decoration: underline;
 }
 
-.tulisan_dua{
+.tulisan_dua {
     color: orangered;
     font-size: 24px;
     font-style: italic;
@@ -19,7 +19,7 @@ body{
     text-decoration: overline;
 }
 
-.tulisan_tiga{
+.tulisan_tiga {
     color: aqua;
     font-weight: bold;
     font-style: oblique;
@@ -27,4 +27,22 @@ body{
     text-transform: lowercase;
     text-decoration: line-through;
     word-spacing: 10px;
+}
+
+.row {
+    display: flex;
+}
+
+.col-md-4 {
+    flex-basis: 33.33%;
+    padding: 0 10px;
+}
+
+.col-md-8 {
+    flex-basis: 66.66%;
+    padding: 0 10px;
+}
+
+.profile-text {
+    margin-top: 20px;
 }
