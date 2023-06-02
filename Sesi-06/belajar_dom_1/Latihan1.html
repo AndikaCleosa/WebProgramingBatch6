@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar DOM</title>
+</head>
+
+<body>
+    <h3>Belajar DOM</h3>
+    <div id="hello"></div>
+    <script>
+        // mengakses objek head
+        document.head;
+        // mengakses objek body
+        document.body;
+        // mengakses objek titel ( panjang data )
+        document.title;
+
+        // effect change
+        document.write("hello DOM";)
+        document.getElementById("hello").innerHTML = "Hello dom from JS";
+
+        // create element p
+        var judulParagraf = document.createElement("p");
+        var judulHeading = document.createElement("h1");
+
+        // isi konten element
+        judulParagraf.textContent = "Hello elemet paragraf / p";
+        document.body.appended(judulParagraf)
+
+        // isi konten element heading 1
+        judulHeading.textContent = "Belajar Javascript";
+        document.body.append(judulHeading);
+
+    </script>
+</body>
+
+</html>

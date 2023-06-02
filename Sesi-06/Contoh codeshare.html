@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar Dom</title>
+</head>
+
+<body>
+    <h3>Belajar DOM</h3>
+    <div id="hello"></div>
+    <script>
+        // mengakses objek head
+        document.head;
+        // mengakses objek body
+        document.body;
+        // mengakses objek title (panjang data)
+        document.title.length;
+
+        //   effect change
+        document.write("Hello DOM");
+        document.getElementById("hello").innerHTML = "Hello DOM from JS";
+
+        //   create element p
+        var judulParagraf = document.createElement("p");
+        var judulHeading = document.createElement("h1");
+
+        // isi konten element paragraf
+        judulParagraf.textContent = "Hello element paragraf / p";
+        document.body.append(judulParagraf);
+
+        // isi konten element heading 1
+        judulHeading.textContent = "Belajar Javascript";
+        document.body.append(judulHeading);
+
+        //   hapus element berdasarkan id
+        var p = document.getElementById("hello");
+        p.remove();
+
+        console.log("elemen id hello sudah terhapus");
+        console.log(p);
+    </script>
+</body>
+
+</html>
+
+----
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar Memanfaatkan DOM</title>
+    <style>
+        body {
+            background-color: aqua;
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Aplikasi Ubah warna</h3>
+    <label>Warna Latar :</label>
+    <input type="color" id="bg-color" />
+    <br />
+    <label>Warna Teks :</label>
+    <input type="color" id="text-color" />
+    <script>
+        var bgColor = document.getElementById("bg-color");
+        var textColor = document.getElementById("text-color");
+
+        bgColor.addEventListener("change", (event) => {
+            document.body.style.backgroundColor = bgColor.value;
+        });
+
+        textColor.addEventListener("change", (event) => {
+            document.body.style.color = textColor.value;
+        });
+    </script>
+</body>
+
+</html>
+
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar Regex</title>
+</head>
+
+<body>
+    <!-- 
+        no telp : +62 62 08 (0 nya dihilangin, cukup input 8)
+        08 22222
+        08 (space)
+        08-
+
+        email : @ .
+
+     -->
+    <input type="email" placeholder="Input Email Anda" />
+
+    <script>
+        // regex 1
+        var foo = /ab+c/;
+        console.log(foo);
+        console.log(typeof foo);
+
+        var bar = new RegExp("ab+c");
+        console.log(bar);
+        console.log(typeof bar);
+
+        // regex 2
+        var foo = "Belajar JavaScript";
+        var pola = /JavaScript/;
+        console.log(pola.test(foo));
+        console.log(/Belajar/.test(foo));
+        console.log(/Belajar/.test(foo));
+
+        //   regex 3
+        var foo =
+            "1 jam sama dengan 60 menit, juga sama dengan 3600 detik | Hello 10 Jam";
+        var pola = /\d+/g;
+        console.log(foo.length);
+
+        //   menggunakan looping
+        for (let index = 0; index < 5; index++) {
+            console.log(pola.exec(foo));
+        }
+        //   manual
+        console.log(pola.exec(foo));
+        console.log(pola.exec(foo));
+        console.log(pola.exec(foo));
+        console.log(pola.exec(foo));
+    </script>
+</body>
+
+</html>
+
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar Regex</title>
+</head>
+
+<body>
+    <h3>Belajar Regex 2</h3>
+    <script>
+        var foo = "Belajar JavaScript";
+
+        //   console.log(/JavaScript/.test(foo));
+        //   console.log(/javaScript/.test(foo)); //false
+        //   console.log(/Belajar/.test(foo));
+        //   console.log(/belajar/.test(foo));
+        //   console.log(/Java/.test(foo));
+        //   console.log(/ajar/.test(foo));
+
+        var pola = /[a-z, 0-9, ]../;
+        console.log(pola.test("abaa"));
+        console.log(pola.test("fba"));
+        console.log(pola.test("1dd")); //false
+        console.log(pola.test("add"));
+        console.log(pola.test(" dd"));
+        console.log(pola.test("belajar")); // belajar = true
+    </script>
+    <!-- 
+    abcde (tidak mengandung spasi)
+
+    ab = false
+    ab ab = true
+
+
+     -->
+</body>
+
+</html>
